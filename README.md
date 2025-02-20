@@ -30,6 +30,18 @@ sudo apt install python3-venv
 . venv/venv/activate
 ```
 
+- List Requirements
+
+```bash
+pip3 freeze > requirements.txt
+```
+
+- Install Requirements
+
+```bash
+pip3 install -r requirements.txt
+```
+
 - Install Libs on Virtual Env
 
 ```bash
