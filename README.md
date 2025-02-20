@@ -47,3 +47,7 @@ pip3 install -r requirements.txt
 ```bash
 pip3 install <lib_name>
 ```
+
+## Links
+
+- [Python Package Index](https://pypi.org/)
