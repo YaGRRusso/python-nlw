@@ -30,6 +30,12 @@ sudo apt install python3-venv
 . venv/venv/activate
 ```
 
+- Run Test
+
+```bash
+pytest -s -v <path>
+```
+
 - List Requirements
 
 ```bash
