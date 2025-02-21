@@ -5,7 +5,7 @@ def subscribers_creator_validator(request: any):
         "data": {
             "type": "dict",
             "schema": {
-                "name": {
+                "nome": {
                     "type": "string",
                     "required": True,
                     "empty": False

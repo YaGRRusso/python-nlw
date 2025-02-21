@@ -5,7 +5,7 @@ def events_creator_validator(req: any):
         "data": {
             "type": "dict",
             "schema": {
-                "name": {
+                "nome": {
                     "type": "string",
                     "required": True,
                     "empty": False,
@@ -17,5 +17,4 @@ def events_creator_validator(req: any):
     res = body_validator.validate(req.json)
 
     if res is False:
-        print(body_validator.errors)
-        return body_validator.errors
+        raise Exception(body_validator.errors)

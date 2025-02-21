@@ -9,5 +9,5 @@ def test_insert_eventos():
 @pytest.mark.skip(reason='Select in DB')
 def test_select_eventos():
     repository = EventsRepository()
-    event = repository.select_event('Test Event')
+    event = repository.select('Test Event')
     assert event.nome == 'Test Event'

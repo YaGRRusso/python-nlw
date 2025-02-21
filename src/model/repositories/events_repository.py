@@ -13,7 +13,7 @@ class EventsRepository(EventsRepositoryInterface):
                 db.session.rollback()
                 raise exc
             
-    def select_event(self, event_name) -> Eventos:
+    def select(self, event_name) -> Eventos:
         with DBConnectionHandler() as db:
             return (
                 db.session

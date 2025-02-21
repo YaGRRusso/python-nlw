@@ -13,5 +13,5 @@ def test_insert_inscritos():
 @pytest.mark.skip(reason='Select in DB')
 def test_select_inscritos():
     repository = SubscribersRepository()
-    subscriber = repository.select_subscriber("email@email.com")
+    subscriber = repository.select("email@email.com")
     assert subscriber.nome == "Subscriber Test"

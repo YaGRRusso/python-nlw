@@ -6,5 +6,5 @@ class SubscribersRepositoryInterface(ABC):
     def insert(self, subscriber_infos: dict) -> None: pass
     
     @abstractmethod
-    def select_subscriber(self, subscriber_email) -> Inscritos: pass
+    def select(self, subscriber_email) -> Inscritos: pass
             

@@ -18,7 +18,7 @@ class SubscribersRepository(SubscribersRepositoryInterface):
                 db.session.rollback()
                 raise exc
     
-    def select_subscriber(self, subscriber_email) -> Inscritos:
+    def select(self, subscriber_email) -> Inscritos:
         with DBConnectionHandler() as db:
             return (
                 db.session

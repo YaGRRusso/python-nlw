@@ -6,4 +6,4 @@ class EventsRepositoryInterface(ABC):
     def insert(self, event_name: str) -> None: pass
     
     @abstractmethod
-    def select_event(self, event_name) -> Eventos: pass
+    def select(self, event_name) -> Eventos: pass
