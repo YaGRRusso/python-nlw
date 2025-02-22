@@ -15,3 +15,12 @@ def test_select_inscritos():
     repository = SubscribersRepository()
     subscriber = repository.select("email@email.com")
     assert subscriber.nome == "Subscriber Test"
+
+@pytest.mark.skip(reason='Select in DB')
+def test_ranking():
+    repository = SubscribersRepository()
+    res = repository.get_ranking(1)
+    print()
+
+    for item in res:
+        print(f"Link: {item.link}, Total: {item.total}")

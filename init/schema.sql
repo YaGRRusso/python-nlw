@@ -15,7 +15,7 @@ CREATE TABLE Inscritos (
 );
 
 -- Criação da tabela Eventos_link
-CREATE TABLE Eventos_link (
+CREATE TABLE Eventos_Link (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     evento_id INTEGER NOT NULL,
     inscrito_id INTEGER NOT NULL,
