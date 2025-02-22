@@ -10,9 +10,9 @@ class EventsLinkCreator:
     def create(self, http_request: HttpRequest) -> HttpResponse:
         body = http_request.body["data"]
 
-        self.__check_event_link(body['event_id'], body(['subscriber_id']))
-        new_link = self.__create_event_link(body['event_id'], body(['subscriber_id']))
-        return self.__format_response(new_link, body['event_id'], body(['subscriber_id']))
+        self.__check_event_link(body['event_id'], body['subscriber_id'])
+        new_link = self.__create_event_link(body['event_id'], body['subscriber_id'])
+        return self.__format_response(new_link, body['event_id'], body['subscriber_id'])
 
     def __check_event_link(self, event_id: int, subscriber_id: int) -> None:
         response = self.__events_link_repo.select(event_id, subscriber_id)

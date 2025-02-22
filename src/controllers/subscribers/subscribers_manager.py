@@ -3,20 +3,21 @@ from src.model.repositories.interfaces.subscribers_repository import Subscribers
 from src.http_types.http_request import HttpRequest
 from src.http_types.http_response import HttpResponse
 
-class SubscriberManager:
+class SubscribersManager:
     def __init__(self, subscribers_repo: SubscribersRepositoryInterface):
         self.__subscribers_repo = subscribers_repo
 
     def get_subscribers_by_link(self, http_request: HttpRequest) -> HttpResponse:
-        params = http_request.param
+        param_link = http_request.param['link']
+        param_event_id = http_request.param['event_id']
 
-        subscribers = self.__subscribers_repo.select_by_link(params['link'], params['event_id'])
+        subscribers = self.__subscribers_repo.select_by_link(param_link, param_event_id)
         return self.__format_subs_by_link(subscribers)
 
     def get_event_ranking(self, http_request: HttpRequest) -> HttpResponse:
-        params = http_request.param
+        param_event_id = http_request.param['event_id']
 
-        event_ranking = self.__subscribers_repo.get_ranking(params['event_id'])
+        event_ranking = self.__subscribers_repo.get_ranking(param_event_id)
         return self.__format_event_ranking(event_ranking)
 
     def __format_subs_by_link(self, subscribers: list) -> HttpResponse:
